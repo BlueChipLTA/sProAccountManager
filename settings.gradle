@@ -1,0 +1,3 @@
+include ':sProAuthenticator'
+include ':app_example'
+rootProject.name = "sProAccountManager"
