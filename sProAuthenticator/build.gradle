@@ -1,7 +1,12 @@
 plugins {
     id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
 }
-
+apply plugin: 'kotlin-android'
+configurations.all {
+    resolutionStrategy { force 'androidx.core:core-ktx:1.6.0' }
+}
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
@@ -48,4 +53,9 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation "com.squareup.okhttp3:logging-interceptor:3.12.1"
     implementation 'com.squareup.retrofit2:converter-scalars:2.6.0'
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-rx2:1.5.2")
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
 }
